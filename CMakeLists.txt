@@ -18,13 +18,21 @@ add_executable(CMaker
         main.cpp
         UI/MainWindow.cpp
         UI/MainWindow.h
-        UI/mainwindowMainWindow.ui
+        UI/MainWindow.ui
         )
 target_link_libraries(CMaker
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
         )
+
+add_subdirectory(Application)
+
+#FILE(GLOB APP_H_FILES ${PROJECT_SOURCE_DIR}/Application/*.h)
+#FILE(GLOB APP_P_FILES ${PROJECT_SOURCE_DIR}/Application/*.cpp)
+#MESSAGE(${APP_H_FILES})
+#MESSAGE(${APP_P_FILES})
+
 
 if (WIN32)
     set(DEBUG_SUFFIX)
